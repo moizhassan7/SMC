@@ -1,7 +1,7 @@
 (function() {
 	var triggerBttn = document.getElementById( 'trigger-overlay' ),
 		overlay = document.querySelector( 'div.overlay' ),
-		closeBttn = overlay.querySelector( 'button.overlay-close' );
+		closeBttn = overlay?overlay.querySelector( 'button.overlay-close' ):null;
 		transEndEventNames = {
 			'WebkitTransition': 'webkitTransitionEnd',
 			'MozTransition': 'transitionend',
@@ -35,6 +35,10 @@
 		}
 	}
 
-	triggerBttn.addEventListener( 'click', toggleOverlay );
-	closeBttn.addEventListener( 'click', toggleOverlay );
+	if (triggerBttn && overlay) {
+		triggerBttn.addEventListener('click', toggleOverlay);
+	}
+	if (closeBttn) {
+		closeBttn.addEventListener('click', toggleOverlay);
+	}
 })();
