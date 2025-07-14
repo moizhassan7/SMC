@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2025 at 07:51 PM
+-- Generation Time: Jul 14, 2025 at 08:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -178,10 +178,10 @@ CREATE TABLE `slider` (
 
 INSERT INTO `slider` (`id`, `txt`, `image`) VALUES
 (1, 'Find the Right Job . Right Now.\r\n', 'Your job search starts and ends with us.'),
-(2, '', '03401320250710900.png'),
-(3, '', '33401320250710778.png'),
-(5, '', '42401320250710790.jpg'),
-(6, '', '35411320250710369.png');
+(2, '', '11072020250714508.png'),
+(3, '', '24072020250714558.png'),
+(5, '', '35072020250714928.jpg'),
+(6, '', '47072020250714139.jpg');
 
 -- --------------------------------------------------------
 
