@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	}
+#header{
+	height:auto;
+	background:rgba(0,0,0,0.6);
+	color:#FFF;
+	text-align:center;
+	padding-top:5px;
+	padding-bottom:5px;
+	text-transform:uppercase;
+	border-bottom:1px solid #FFF;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+
+	}
+#loginpanel{
+	height:auto;
+	background:rgba(0,0,0,0.6);
+	color:#FFF;
+	border-radius:10px;
+	margin-top:5%;
+	}	
+#footer{
+	height:auto;
+	background:rgba(0,0,0,0.6);
+	color:#FFF;
+	text-align:center;
+	padding-top:15px;
+	padding-bottom:5px;
+	margin-top:25%;
+	}
+#footer a{
+	color:#FFF;
+	}
+#sidepanel{
+	border-right:2px solid #000;
+	background:rgba(0,0,0,0.6);
+}
+#sidepanel input{
+    width:100%;
+	margin-top:2%;
+	margin-bottom:2%;
+ }
+#frame iframe{
+	width:100%;
+	height:700px;
+ }
+	
+#menu{
+	height:auto;
+	margin-top:2%;
+	cursor:pointer;
+	color:#FFF;
+	font-size:12x;
+	padding-top:8px;
+	padding-bottom:8px;
+	border-bottom:1px solid #CCC;
+	}
+#moveview{
+	padding-left:20px;
+	}	
+#menu:hover{
+	background-color:#000;
+	}			
+
+#add{
+	height:auto;
+	background:rgba(0,0,0,0.6);
+	color:#FFF;
+	border-radius:10px;
+	margin-top:1%;
+	margin-bottom:30%;
+	}
+#add input{
+	font-size:16px;
+	}
+#add textarea{
+	font-size:16px;
+	}
+#adddata{
+	height:auto;
+	background:rgba(0,0,0,0.6);
+	color:#FFF;
+	border-radius:10px;
+	margin-top:5%;
+	margin-bottom:30%;
+	}
+#adddata input{
+	font-size:16px;
+	}
+#adddata textarea{
+	font-size:16px;
+	}			
+#panel{
+	height:270px;
+	background:rgba(0,0,0,0.6);
+	color:#FFF;
+	border-radius:10px;
+	margin-top:10%;
+	text-align:center;
+	padding-top:30px;
+	}
+#panel h3{
+	padding-top:30px;
+}
+#adda{
+	height:auto;
+	background:rgba(0,0,0,0.6);
+	color:#FFF;
+	border-radius:10px;
+	margin-top:3%;
+	}		
+#view{
+	margin-bottom:60%;
+	}	
+th{
+	text-align:center;background:rgba(0,0,0,0.6); color:#fff;font-size:14px;
+	}
+td{
+	text-align: justify;
+	color: #000;
+	font-size: 14px;
+	 background:rgba(214,214,214,0.9);
+	}
+td input{
+	width:150px;
+	}

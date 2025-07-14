@@ -1,0 +1,40 @@
+<div id="header" class="container-fluid">
+<div class="col-md-1 col-sm-1 col-xs-1">
+<span class="glyphicon glyphicon-menu-hamburger" style="font-size:24px;padding-top:20px; cursor:pointer;" onClick="nakryar()" id="nakryar"></span>
+</div>
+<div class="container-fluid">
+<h3>Admin Panel of FMT</h3>
+</div>
+</div>
+<script>
+$(document).ready(function(e) {
+	
+	var a=1;
+	
+	$('#nakryar').click(function(e) {
+		
+		if(a==1)
+		{
+		
+			$('#sidepanel').css("display", "none");
+			
+			$('#frame').toggleClass('col-md-10 col-sm-10 col-xs-10 col-md-12 col-sm-12 col-xs-12');
+			
+			  a=2;
+
+		}
+		
+		else{
+			
+			$('#sidepanel').css("display", "block");
+			
+			$('#frame').toggleClass('col-md-12 col-sm-12 col-xs-12 col-md-10 col-sm-10 col-xs-10');
+			
+		  a=1;
+			
+			}
+		
+    });
+    
+});
+</script> 

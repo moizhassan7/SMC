@@ -1,0 +1,59 @@
+#cv_show_body{
+    /*background: rgba(36, 121, 110, 0.73);*/
+    font-family: "Times New Roman";
+    font-style: italic;
+    color: black !important;
+
+}
+#cv_show_body p ,label{
+    font-size: 13pt;
+}
+#cv_show_body p{
+    display: inline;
+}
+#cvlogo{
+    margin-top: 20px;
+}
+.heading{
+    background-color: #276542;
+    border-radius: 6px;
+    color: white;
+}
+.margintopbottom5px{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.marginleft10px{
+    margin-left: 10px;
+}
+.getbottomborder{
+    border-bottom: 1px solid black;
+}
+#con_grad{
+    -webkit-box-shadow: 0px 0px 76px -11px rgba(46,97,68,1);
+    -moz-box-shadow: 0px 0px 76px -11px rgba(46,97,68,1);
+    box-shadow: 0px 0px 76px -11px rgba(46,97,68,1);
+}
+#printbtn{
+    position: fixed;
+}
+@media print {
+    h4{
+        border-bottom: 1px solid gray !important;
+        font-size: 20px;
+        padding-left: 20px;
+        padding-bottom: 5px;
+    }
+    img{
+        margin-left: 160px;
+    }
+    #printbtn{
+        display: none;
+    }
+    #con_grad p{
+        font-size: 18px;
+    }
+    #con_grad label{
+        font-size: 18px;
+    }
+}

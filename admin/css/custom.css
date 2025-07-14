@@ -1,0 +1,10 @@
+RegCotent{
+    background-color:  #F9F9F9;
+}
+#success_message{ display: none;}
+.displaynone{display: none;}
+#loadinggif {
+    position: relative;
+    margin-left: 450px;
+    display: none;
+}
