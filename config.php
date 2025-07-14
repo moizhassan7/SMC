@@ -1,7 +1,7 @@
 <?php 
 define('HOSTNAME','localhost');
 
-define('DBNAME','fmf'); 
+define('DBNAME','smc'); 
 
 define('DBUSER','root');
 

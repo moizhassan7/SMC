@@ -88,7 +88,7 @@
     .footer-links li {
         margin-bottom: 10px;
     }
-footer-links li{
+    .footer-links li{
     margin: 0 0 10px;
 }
     .footer-links a {
@@ -210,6 +210,8 @@ footer-links li{
                         
                         <div class="social-icons">
                             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Linkedin"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>

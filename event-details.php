@@ -1,7 +1,7 @@
 <?php
 session_start();
 include "config.php";
-// include_once "header.php";
+include_once "header.php";
 
 // Get event ID from URL and sanitize it
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;

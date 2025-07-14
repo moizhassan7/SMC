@@ -1,10 +1,8 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 <style>
     :root {
         --primary-red: #8B0000;
         --white: #ffffff;
-        --text-color-dark: #333;
+        --text-color-dark: #333333;
     }
 
     body {
@@ -12,20 +10,29 @@
     }
 
     .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 1030;
         width: 100%;
-    }
+  position: sticky; /* Make the main navbar sticky */
+        top: 0; 
+          z-index: 1020;
+            transition: top 0.3s ease-out; 
 
-    /* Top Red Bar */
+    }
     .top-bar {
         background-color: var(--primary-red);
         color: white;
         padding: 10px 0;
         font-size: 1rem;
         font-family: "Times New Roman", Times, serif;
+        transition: transform 0.3s ease-out; /* Smooth transition for hide/show */
     }
+
+    /* New style for hiding the top bar */
+    .top-bar.hidden {
+        transform: translateY(-100%);
+        opacity: 0; 
+        visibility: hidden; 
+    }
+
 
     .top-bar a,
     .top-bar span {
@@ -48,7 +55,7 @@
         background-color: var(--white);
         border-bottom: 1px solid #ddd;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+        z-index: 1020;   }
 
     .navbar-brand img {
         height: 100px;
@@ -58,13 +65,12 @@
 
     .navbar-nav .nav-link {
         color: var(--text-color-dark);
-        padding: 12px 20px;
+        padding: 8px 20px; /* Reduced padding */
         font-weight: 500;
         transition: all 0.3s ease;
         font-family: "Times New Roman";
     }
 
-    /* Active/Hover states for nav links */
     .navbar-nav .nav-link.active,
     .navbar-nav .nav-link:hover {
         color: var(--primary-red);
@@ -72,11 +78,10 @@
     }
 
     .dropdown-menu {
-        background-color: var(--white);
+        background-color: var(--primary-red);
         border: 1px solid #ddd;
         padding: 10px 0;
         display: none;
-        transition: display 0.1s ease-in-out;
     }
 
     .dropdown-menu.show {
@@ -95,52 +100,10 @@
         color: white;
     }
 
-    /* Nested Dropdown Styling */
-    .dropdown-submenu {
-        position: relative;
-    }
-
-    .dropdown-submenu > .dropdown-menu {
-        top: 0;
-        left: 100%;
-        margin-top: -6px;
-        margin-left: -1px;
-        border-radius: 0.25rem;
-    }
-
-    /* Arrow for nested dropdowns */
-    .dropdown-submenu > a::after {
-        display: block;
-        content: "\f105"; /* Font Awesome right arrow */
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
-        float: right;
-        margin-top: 2px;
-        margin-left: .5em;
-        vertical-align: middle;
-        transition: transform .2s ease-in-out;
-    }
-
-    .dropdown-submenu.show > a::after {
-        transform: rotate(90deg); /* Rotate arrow when submenu is open on mobile */
-    }
-
     /* CSS for Desktop Hover Behavior */
     @media (min-width: 992px) {
         .navbar-nav .dropdown:hover > .dropdown-menu {
             display: block; /* Show the main dropdown menu on hover */
-        }
-
-        .dropdown-submenu:hover > .dropdown-menu {
-            display: block; /* Show nested dropdown menus on hover */
-        }
-
-        .dropdown-submenu > a::after {
-            border-left-color: #ccc; /* Default arrow color for desktop */
-        }
-
-        .dropdown-submenu:hover > a::after {
-            border-left-color: white; /* Arrow color on hover */
         }
     }
 
@@ -157,8 +120,15 @@
     .container {
         max-width: 1300px;
     }
-
-    @media (max-width: 991.98px) { /* Changed to match Bootstrap's lg breakpoint for consistency */
+.remove_navbar {
+    transition: top 0.3s ease-out; /* Smooth transition for hiding the navbar */
+        top: -50px; 
+    }
+    .remove_navbar_mobile {
+        top: -50px;
+        transition: top 0.3s ease-out; 
+    }
+    @media (max-width: 991.98px) {
         .top-bar .contact-info,
         .top-bar .social-icons {
             justify-content: center;
@@ -169,42 +139,26 @@
             padding: 10px 15px;
             border-bottom: none !important;
         }
-
+        .top-bar .social-icons a{
+            display: none;
+        }
         .navbar-brand img {
             height: 80px;
         }
-
-        /* Adjustments for mobile nested dropdowns */
-        .dropdown-submenu > .dropdown-menu {
-            position: static; /* Stack vertically on mobile */
-            left: auto;
-            margin-top: 0;
-            margin-left: 15px; /* Indent nested items */
-            border: none;
-            box-shadow: none;
-        }
-
-        .dropdown-submenu > a::after {
-            float: none; /* Remove float */
-            display: inline-block; /* Ensure it stays in line with text */
-            margin-left: .5em; /* Space from text */
-            transform: rotate(0deg); /* Default rotation on mobile */
-        }
-
-        /* For mobile, hide dropdown menus by default to be controlled by JS toggle */
+        
         .dropdown-menu {
             display: none;
         }
+    
+      
     }
 </style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <header class="site-header">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<header class="site-header">
     <div class="top-bar">
         <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-center">
             <div class="contact-info d-flex align-items-center gap-4">
@@ -235,9 +189,8 @@
                     function isActive($pageName, $currentPage) {
                         return ($currentPage === $pageName) ? 'active' : '';
                     }
-
                     if (!isset($con)) {
-                        include_once "config.php";
+                      include_once 'config.php';
                     }
                     ?>
 
@@ -265,7 +218,7 @@
                         <a class="nav-link dropdown-toggle
                             <?php
                             $isDepartmentActive = false;
-                            $departmentPages = ['faculty_detail.php', 'department_detail.php'];
+                            $departmentPages = ['faculty_detail.php']; // Only faculty_detail.php
                             if (in_array($currentPage, $departmentPages)) {
                                 $isDepartmentActive = true;
                             }
@@ -276,36 +229,25 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="departmentsDropdown">
                             <?php
-                            $faculty_sql = "SELECT id, name FROM faculties ORDER BY name ASC";
-                            $faculty_result = $con->query($faculty_sql);
+                            if (isset($con) && $con->ping()) {
+                                $faculty_sql = "SELECT id, name FROM faculties ORDER BY name ASC";
+                                $faculty_result = $con->query($faculty_sql);
 
-                            if ($faculty_result && $faculty_result->num_rows > 0) {
-                                while ($faculty_row = $faculty_result->fetch_assoc()) {
-                                    echo '<li class="dropdown-submenu">';
-                                    $facultyLinkActive = ($currentPage === 'faculty_detail.php' && isset($_GET['id']) && intval($_GET['id']) == $faculty_row['id']) ? 'active' : '';
+                                if ($faculty_result && $faculty_result->num_rows > 0) {
+                                    while ($faculty_row = $faculty_result->fetch_assoc()) {
+                                        echo '<li>';
+                                        $facultyLinkActive = ($currentPage === 'faculty_detail.php' && isset($_GET['id']) && intval($_GET['id']) == $faculty_row['id']) ? 'active' : '';
 
-                                    echo '<a class="dropdown-item dropdown-toggle ' . $facultyLinkActive . '" href="faculty_detail.php?id=' . htmlspecialchars($faculty_row['id']) . '">';
-                                    echo htmlspecialchars($faculty_row['name']);
-                                    echo '</a>';
-
-                                    $department_sql = "SELECT id, name FROM departments WHERE faculty_id = " . intval($faculty_row['id']) . " ORDER BY name ASC";
-                                    $department_result = $con->query($department_sql);
-
-                                    if ($department_result && $department_result->num_rows > 0) {
-                                        echo '<ul class="dropdown-menu">'; 
-                                        while ($department_row = $department_result->fetch_assoc()) {
-                                            
-                                            $departmentLinkActive = ($currentPage === 'department_detail.php' && isset($_GET['id']) && intval($_GET['id']) == $department_row['id']) ? 'active' : '';
-                                            echo '<li><a class="dropdown-item ' . $departmentLinkActive . '" href="department_detail.php?id=' . htmlspecialchars($department_row['id']) . '">';
-                                            echo htmlspecialchars($department_row['name']);
-                                            echo '</a></li>';
-                                        }
-                                        echo '</ul>'; 
+                                        echo '<a class="dropdown-item ' . $facultyLinkActive . '" href="faculty_detail.php?id=' . htmlspecialchars($faculty_row['id']) . '">';
+                                        echo htmlspecialchars($faculty_row['name']);
+                                        echo '</a>';
+                                        echo '</li>';
                                     }
-                                    echo '</li>'; 
+                                } else {
+                                    echo '<li><a class="dropdown-item" href="#">No Faculties Found</a></li>';
                                 }
                             } else {
-                                echo '<li><a class="dropdown-item" href="#">No Faculties Found</a></li>';
+                                echo '<li><a class="dropdown-item" href="#">Database connection not available</a></li>';
                             }
                             ?>
                         </ul>
@@ -320,7 +262,7 @@
                         <a class="nav-link <?= isActive('downloads.php', $currentPage) ?>" href="downloads.php">DOWNLOADS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?= isActive('contact.php', $currentPage) ?>" href="contact.php">CONTACT US</a>
+                        <a class="nav-link <?= isActive('contact.php', $currentPage) ?>" href="contact_us.php">CONTACT US</a>
                     </li>
                 </ul>
             </div>
@@ -331,37 +273,16 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.dropdown-submenu a.dropdown-toggle').forEach(function(element){
-            element.addEventListener('click', function (e) {
-                let nextEl = this.nextElementSibling;
-                if(nextEl && nextEl.classList.contains('dropdown-menu')){
-                    e.preventDefault();
-                    e.stopPropagation(); 
-
-                    let parentDropdown = this.closest('.dropdown-menu');
-                    if(parentDropdown){
-                        parentDropdown.querySelectorAll('.dropdown-menu.show').forEach(function(el){
-                            if (el !== nextEl) { 
-                                el.classList.remove('show');
-                                el.closest('.dropdown-submenu').classList.remove('show');
-                            }
-                        });
-                    }
-                    // Toggle the current submenu
-                    nextEl.classList.toggle('show');
-                    this.closest('.dropdown-submenu').classList.toggle('show'); 
-                }
-            });
-        });
-
+        // Close dropdowns when clicking outside
         document.addEventListener('click', function(e) {
+            // Check if the clicked element is not inside a dropdown or the navbar toggler
             if (!e.target.closest('.dropdown') && !e.target.closest('.navbar-toggler')) {
                 document.querySelectorAll('.dropdown-menu.show').forEach(function(el) {
                     el.classList.remove('show');
-                    el.closest('.dropdown-submenu')?.classList.remove('show');
                 });
                 const navbarCollapse = document.getElementById('navbarNav');
                 if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    // Only close the navbar if the click wasn't on the toggler itself
                     if (!e.target.closest('.navbar-toggler')) {
                         const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
                         bsCollapse.hide();
@@ -370,24 +291,36 @@
             }
         });
 
+        // Close dropdowns when the navbar toggler is clicked (for mobile menu)
         const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.getElementById('navbarNav');
-
         navbarToggler.addEventListener('click', function() {
             document.querySelectorAll('.dropdown-menu.show').forEach(function(el) {
                 el.classList.remove('show');
-                el.closest('.dropdown-submenu')?.classList.remove('show');
             });
         });
 
-        document.querySelectorAll('.dropdown-menu.dropdown-submenu').forEach(function(el){
-            el.addEventListener('click', function (e) {
-                if (window.innerWidth >= 992) { 
-                    e.stopPropagation();
-                }
-            });
-        });
-    });
+        // New: Hide top bar on scroll for a cooler look and reduced space
+        const topBar = document.querySelector('.top-bar');
+        topBarHeight = topBar.offsetHeight; // Store the height of the top bar
+        const siteHeader = document.querySelector('.site-header');
+        let lastScrollTop = 0; 
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                topBar.classList.add('hidden'); // Hide the top bar when scrolling down
+                siteHeader.style.top = `-${topBarHeight}px`; // Adjust the header position
+            }else{
+                topBar.classList.remove('hidden'); 
+                siteHeader.style.top = '0'; 
+            }
+            lastScrollTop= scrollTop; 
+        
+
+});
+});
+
 </script>
-</body>
-</html> 
+
+ 

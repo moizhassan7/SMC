@@ -7,16 +7,10 @@ include_once "../config.php";
 ?>	
 <div id="sidepanel" class="col-md-2 col-sm-2 col-xs-2" style="padding-left:0px; padding-right:0px;">
 
-<a href="uploadedcvs.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-th-large"></span><span id="moveview">Uploaded CV's</span></div>
-</a>
+
 
 <a href="view_slider.php" target="iframea">
 <div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-th-large"></span><span id="moveview">Sldier</span></div>
-</a>
-
-<a href="view_ppcategory.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-th"></span><span id="moveview">Popular Categories</span></div>
 </a>
 
 <a href="view_news.php" target="iframea">
@@ -42,33 +36,16 @@ include_once "../config.php";
 <div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-eye-open"></span><span id="moveview">Departments</span></div>
 </a>
 
-<a href="view_staff.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-equalizer"></span><span id="moveview">ABC</span></div>
-</a>
 
-<a href="view_aboutus.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-tasks"></span><span id="moveview">Footer About Us</span></div>
-</a>
 
-<a href="view_address.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-tasks"></span><span id="moveview">Address Details</span></div>
-</a>
 
-<a href="view_aboutfmf.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-earphone"></span><span id="moveview">About FMT</span></div>
-</a>
 
-<a href="view_msgceo.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-tasks"></span><span id="moveview">View Mesage of CEO</span></div>
-</a>
 
-<a href="view_comentable.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-tasks"></span><span id="moveview">All Categories</span></div>
-</a>
 
-<a href="view_glry.php" target="iframea">
-<div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-earphone"></span><span id="moveview">Gallery</span></div>
-</a>
+
+
+
+
 
 <a href="myprofile.php" target="iframea">
 <div class="col-md-12 col-sm-12 col-xs-12" id="menu"><span class="glyphicon glyphicon-user"></span><span id="moveview">Admin Profile</span></div>
