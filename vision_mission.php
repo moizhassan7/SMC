@@ -2,14 +2,20 @@
 session_start();
 include "config.php"; // Assuming config.php sets up your database connection
 include_once "header.php"; // Include your header file
+$siteSettings = [];
+$settings_q = mysqli_query($con, "SELECT setting_key, setting_value FROM site_settings");
+while ($row = mysqli_fetch_assoc($settings_q)) {
+    $siteSettings[$row['setting_key']] = $row['setting_value'];
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision & Mission - Medical University</title>
+    <title>Vision & Mission - Sargodha Medical Collage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -179,8 +185,7 @@ include_once "header.php"; // Include your header file
     </style>
 </head>
 <body>
-
-<div class="page-hero">
+<div class="page-hero" style="background-image: url('images/<?= htmlspecialchars($siteSettings['vision_mission_hero_banner'] ?? 'placeholder_hero.jpg') ?>');">
     <h1>Our Vision & Mission</h1>
 </div>
 

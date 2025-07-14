@@ -155,7 +155,12 @@ include_once "header.php"; // Include your header file here
                     <a href="#full-message" class="read-more-btn">READ MORE</a>
                 </div>
                 <div class="principal-image-container">
-                    <img src="images/principal_image.png" alt="Prof. Dr. Muhammad Waris Farooka" class="principal-image">
+                   <?php
+$principal_img_q = mysqli_query($con, "SELECT setting_value FROM site_settings WHERE setting_key = 'principal_image'");
+$principal_img_row = mysqli_fetch_assoc($principal_img_q);
+$principal_image_path = $principal_img_row['setting_value'] ?? 'placeholder_principal.jpg'; 
+?>
+<img src="images/<?= htmlspecialchars($principal_image_path) ?>" alt="Prof. Dr. Muhammad Waris Farooka" class="principal-image">
                 </div>
             </div>
         </div>

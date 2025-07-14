@@ -222,7 +222,7 @@ $result_departments = $con->query($sql_departments);
             <ul class="departments-list">
                 <?php while ($department = $result_departments->fetch_assoc()): ?>
                 <li>
-                    <a href="department_detail.php?id=<?= htmlspecialchars($department['id']) ?>" style="text-decoration: none; color: inherit;">
+                    <a href="coming_soon.php" style="text-decoration: none; color: inherit;">
                         <i class="fas fa-arrow-right me-2" style="color: var(--secondary-color);"></i> <?= htmlspecialchars($department['name']) ?>
                     </a>
                 </li>

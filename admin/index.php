@@ -39,11 +39,10 @@ include_once "headera.html";
 </form>
 </div>
 </div>
-
-
-</body>
-</html>
-
 <?php
 include_once "footer.html";
  } ?>
+</body>
+</html>
+
+

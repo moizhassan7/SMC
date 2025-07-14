@@ -1,3 +1,14 @@
+                   <?php
+// Fetch principal_image from site_settings
+$principal_img_q = mysqli_query($con, "SELECT setting_value FROM site_settings WHERE setting_key = 'principal_image'");
+$principal_img_row = mysqli_fetch_assoc($principal_img_q);
+$principal_image_path = $principal_img_row['setting_value'] ?? 'placeholder_principal.jpg'; // Default if not set
+$siteSettings = [];
+$settings_q = mysqli_query($con, "SELECT setting_key, setting_value FROM site_settings");
+while ($row = mysqli_fetch_assoc($settings_q)) {
+    $siteSettings[$row['setting_key']] = $row['setting_value'];}
+?>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
@@ -154,7 +165,8 @@
 
     <!-- Vision and Mission Section -->
     <div class="row align-items-stretch">
-        <div class="col-md-4 vision-bg">
+        
+        <div class="col-md-4 vision-bg"style="background-image: url('images/<?= htmlspecialchars($siteSettings['vision_mission_hero_banner'] ?? 'placeholder_hero.jpg') ?>');" >
             <div class="highlight-box">
                 OUR<br>VISION<br>&<br>MISSION
             </div>
@@ -179,7 +191,7 @@
                     <a href="#full-message" class="read-more-btn">READ MORE</a>
                 </div>
                 <div class="principal-image-container">
-                    <img src="images/principal_image.png" alt="Prof. Dr. Muhammad Waris Farooka" class="principal-image">
+<img src="images/<?= htmlspecialchars($principal_image_path) ?>" alt="Prof. Dr. Muhammad Waris Farooka" class="principal-image">
                 </div>
             </div>
         </div>

@@ -50,7 +50,10 @@
     .top-bar .social-icons a:hover {
         color: #f0e68c;
     }
-
+    .nav-item{
+        font-size: .9rem;
+        font-weight: 500;
+    }
     .main-navbar {
         background-color: var(--white);
         border-bottom: 1px solid #ddd;
@@ -251,6 +254,9 @@
                             }
                             ?>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= isActive('research.php', $currentPage) ?>" href="research.php">RESEARCH</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= isActive('news-events.php', $currentPage) ?>" href="news-events.php">NEWS & EVENTS</a>

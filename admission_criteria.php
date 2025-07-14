@@ -2,6 +2,11 @@
 session_start();
 include "config.php"; // Your database connection
 include_once "header.php"; // Your site header
+$siteSettings = [];
+$settings_q = mysqli_query($con, "SELECT setting_key, setting_value FROM site_settings");
+while ($row = mysqli_fetch_assoc($settings_q)) {
+    $siteSettings[$row['setting_key']] = $row['setting_value'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -222,7 +227,7 @@ include_once "header.php"; // Your site header
 </head>
 <body>
 
-<div class="admission-hero">
+<div class="admission-hero" style="background-image: url('images/<?= htmlspecialchars($siteSettings['admission_hero_banner'] ?? 'placeholder_admission.jpg') ?>');">
     <h1>Admission Criteria</h1>
 </div>
 
